@@ -227,3 +227,14 @@ Here's a running list of some I have encountered and spent too much time finding
 }
 ```
 
+* Can't set a schedule? Check the ScheduleTypeRegistry.cpp make sure your schedule objects are in there and you didn't make any copy paste errors
+
+```c++
+{"ElectricLoadCenterDistribution", "Track  Scheme", "trackScheduleSchemeSchedule",true,"",0.0,OptionalDouble()},
+
+// This isn't good! "trackScheduleSchemeSchedule" isn't right for this, I just made a silly copy paste error
+{"ElectricLoadCenterDistribution", "Storage Charge Power Fraction", "trackScheduleSchemeSchedule",true,"",0.0,1.0},
+// Should be replaced by
+{"ElectricLoadCenterDistribution", "Storage Charge Power Fraction", "storageChargePowerFractionSchedule",true,"",0.0,1.0},
+
+```
