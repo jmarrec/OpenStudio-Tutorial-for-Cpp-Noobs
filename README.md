@@ -68,7 +68,8 @@ void MyClass_Impl::bar() {
 void MyClass::bar() {
   // MyClass:bar just "forwards" to MyClass_Impl::bar()
   getImpl<detail::MyClass_Impl>()->bar();
-}```
+}
+```
 
 You're still not seeing why that's a good thing to have two classes leading to three files and a much more verbose code base? That's also, ok, neither am I really.
 
@@ -171,7 +172,8 @@ int main(){
   // "With ByRef: 10": x has been modified, because we passed by reference with the '&'
   
   return 0;
-}```
+}
+```
 
 ### virtual and override
 
